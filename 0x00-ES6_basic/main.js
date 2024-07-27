@@ -1,3 +1,6 @@
-import concatArrays from './5-spread-operator.js';
+import getFullBudgetObject from './9-getFullBudget.js';
 
-console.log(concatArrays(['a', 'b'], ['c', 'd'], 'Hello'));
+const fullBudget = getFullBudgetObject(20, 50, 10);
+
+console.log(fullBudget.getIncomeInDollars(fullBudget.income));
+console.log(fullBudget.getIncomeInEuros(fullBudget.income));
