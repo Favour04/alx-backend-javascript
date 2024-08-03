@@ -25,7 +25,7 @@ class Director implements DirectorsInterface {
     }
 }
 
-class Teacher implements TeacherInterface {
+class Teacher implements TeacherInterface  {
     
     workFromHome(): string {
         return 'Cannot workfrom home'
@@ -51,6 +51,21 @@ function createEmployee(salary: number | string): Teacher | Director {
         return new Director
     } 
 }
-console.log(createEmployee(20));
-console.log(createEmployee(1000));
-console.log(createEmployee('$500'))
+
+function isDirector(employee: Teacher | Director): boolean{
+    if (employee === Object(Director)){
+        console.log(Object(Director))
+        return true
+    } else {
+        console.log(Object(Director))
+        return false
+    }
+}
+console.log(isDirector(createEmployee(40)))
+// function executeWork(employee: Teacher | Director): string{
+//     if (!isDirector(employee)){
+//         return employee.workDirectortasks
+//     } else{
+//         return employee.workTeachertasks
+//     }
+// }
